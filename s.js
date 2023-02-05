@@ -53,7 +53,7 @@ do{
 
 
  
-}while(count && error !== '') debugger
+}while(count && error !== '')
 console.log('   name'.startsWith('   '))
 
     if(success){
