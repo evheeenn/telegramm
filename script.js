@@ -1,71 +1,53 @@
-const ITCompany = {
-  id: 12332129,
-  companyName: 'Playtika',
-  type: 'product',
-  vacancies: [
-    {
-      frontEnd: {
-        salary: 1200
-      },
-    },
-    {
-      backEnd: {
-        salary: 1500
-      },
-    },
-    {
-      scrumMaster: {
-        salary: 500
-      },
-    },
-    {
-      tester: {
-        salary: 600
-      },
+class Vegetable {
+  constructor(vegList) {
+    this.type = 'Vegetable'
+    this.name = vegList.name
+    this.icon = vegList.icon
+    this.price = vegList.price
+    this.seasonKoef = 1.3
+    this.season = vegList.season !== undefined ? vegList.season : false
+  }
+
+  getPrice() {
+    if (this.season) {
+      return this.price * this.seasonKoef
+    } else {
+      return this.price
     }
-  ],
-  hello: function () {
-    document.write(`<div id = "main_div"><p>Hello, my name is ${this.name}, I am ${this.position} in ${this.companyName}</p><div id = "img"></div></div>`)
-  },
-  unsuccess: function () {
-    document.write(`<div id = "main_div"><p>${this.name2}, you have significant skills for ${this.position2} but we hired another developer, let's keep in touch!</p><div id = "img"></div></div>`)
+  }
+
+  getInfo() {
+    let result = `<li>${this.type}. SeasonKoef: ${this.seasonKoef}. Name: ${this.name}. Icon: ${this.icon}. Price: ${this.getPrice()}`
+    if (this.season) {
+      result += ` season: ${this.season}</li>`
+    } else {
+      result += `</li>`
+    }
+    return result
   }
 }
 
-const fun = (company) => {
-  let name = prompt('What is your name?')
-  let position = prompt('Type position')
-  let salary = Number(prompt('Type salary'))
-
-  let user
-  let ifUserUnsuccess
-
-  for (let key in company) {
-    if (key === 'vacancies') {
-      company[key].forEach((el) => {
-        if (Object.keys(el)[0].toLowerCase() === position.toLowerCase()) {
-          if (el[Object.keys(el)[0]].salary >= salary) {
-            user = Object.create(ITCompany)
-          } else {
-            ifUserUnsuccess = Object.create(ITCompany)
-          }
-        }
-      }) 
-    }
+const vegetables = [
+  {
+    name: 'tomato',
+    icon: '🍅',
+    price: 2.3,
+    season: false
+  },
+  {
+    name: 'carrot',
+    icon: '🥕',
+    price: 1.5,
+    season: false
+  },
+  {
+    name: 'corn',
+    icon: '🌽',
+    price: 2.78,
+    season: true
   }
+]
 
-  if (user) {
-    user.name = name
-    user.position = position
-    user.salary = salary
-    user.hello()
-  }
-
-  if (ifUserUnsuccess) {
-    ifUserUnsuccess.name2 = name
-    ifUserUnsuccess.position2 = position
-    ifUserUnsuccess.unsuccess()
-  }
-} 
-
-fun(ITCompany)
+const vegetableList = vegetables.map((el) => new Vegetable({...el}))
+const vegetableInfo = vegetableList.map((veg) => veg.getInfo()).join('')
+document.write(`<ul>${vegetableInfo}</ul>`)
