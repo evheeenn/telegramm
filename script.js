@@ -1,71 +1,119 @@
-const ITCompany = {
-  id: 12332129,
-  companyName: 'Playtika',
-  type: 'product',
-  vacancies: [
-    {
-      frontEnd: {
-        salary: 1200
-      },
-    },
-    {
-      backEnd: {
-        salary: 1500
-      },
-    },
-    {
-      scrumMaster: {
-        salary: 500
-      },
-    },
-    {
-      tester: {
-        salary: 600
-      },
+class Hamburger {
+  #size
+  #staff
+  #topping
+  #spice
+
+  constructor(size, staff) {
+    this.#size = size
+    this.#staff = staff
+  }
+
+  static SMALL_SIZE = {
+    price: 50,
+    calories: 20
+  }
+
+  static BIG_SIZE = {
+    price: 100,
+    calories: 40
+  }
+
+  get size() {
+    return this.#size
+  }
+
+  set size(value) {
+    this.#size = value
+  }
+
+  get staff() {
+    return this.#staff
+  }
+
+  set staff(value) {
+    this.#staff = value
+  }
+
+  get topping() {
+    return this.#topping
+  }
+
+  set topping(value) {
+    this.#topping = value
+  }
+
+  get spice() {
+    return this.#spice
+  }
+
+  set spice(value) {
+    this.#spice = value
+  }
+
+  calcPrice() {
+    let sum = this.#size.price + this.#staff.price
+
+    if (this.#topping) {
+      sum += this.#topping.price
     }
-  ],
-  hello: function () {
-    document.write(`<div id = "main_div"><p>Hello, my name is ${this.name}, I am ${this.position} in ${this.companyName}</p><div id = "img"></div></div>`)
-  },
-  unsuccess: function () {
-    document.write(`<div id = "main_div"><p>${this.name2}, you have significant skills for ${this.position2} but we hired another developer, let's keep in touch!</p><div id = "img"></div></div>`)
+
+    if (this.#spice) {
+      sum += this.#spice.price
+    }
+
+    return sum
+  }
+
+  calcCal() {
+    let sum2 = this.#size.calories + this.#staff.calories
+
+    if (this.#topping) {
+      sum2 += this.#topping.calories
+    }
+
+    if (this.#spice) {
+      sum2 += this.#spice.calories
+    }
+
+    return sum2
   }
 }
 
-const fun = (company) => {
-  let name = prompt('What is your name?')
-  let position = prompt('Type position')
-  let salary = Number(prompt('Type salary'))
-
-  let user
-  let ifUserUnsuccess
-
-  for (let key in company) {
-    if (key === 'vacancies') {
-      company[key].forEach((el) => {
-        if (Object.keys(el)[0].toLowerCase() === position.toLowerCase()) {
-          if (el[Object.keys(el)[0]].salary >= salary) {
-            user = Object.create(ITCompany)
-          } else {
-            ifUserUnsuccess = Object.create(ITCompany)
-          }
-        }
-      }) 
-    }
+class Staff {
+  static CHEESE = {
+    price: 10,
+    calories: 20
   }
 
-  if (user) {
-    user.name = name
-    user.position = position
-    user.salary = salary
-    user.hello()
+  static POTATO = {
+    price: 20,
+    calories: 5
   }
 
-  if (ifUserUnsuccess) {
-    ifUserUnsuccess.name2 = name
-    ifUserUnsuccess.position2 = position
-    ifUserUnsuccess.unsuccess()
+  static SALAD = {
+    price: 15,
+    calories: 10
   }
-} 
+}
 
-fun(ITCompany)
+class Topping {
+  static MAYO = {
+    price: 20,
+    calories: 5
+  }
+
+  static SPICE = {
+    price: 15,
+    calories: 0
+  }
+}
+
+const newHum = new Hamburger(Hamburger.BIG_SIZE, Staff.CHEESE)
+
+newHum.topping = Topping.MAYO
+newHum.spice = Topping.SPICE
+
+const id = Math.round(Math.random() * 9999999).toString().padStart(7, '0')
+const myBlock = document.getElementById('myBlock')
+myBlock.innerHTML = `<h1> Замовлення №${id}</h1><p>Ціна великого бургеру з сиром, майонезом та приправами: ${newHum.calcPrice()} тугриків</p><p>Калорійність: ${newHum.calcCal()} ккал</p><div id = "img"></div>`
