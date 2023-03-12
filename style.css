@@ -1,0 +1,57 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Montserrat', sans-serif;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 117px;
+	background: red;
+}
+
+#logo {
+	width: 117px;
+	height: 117px;
+	margin-right: auto;
+	margin-left: auto;
+	background: url('mac.png');
+	background-repeat: no-repeat;
+	background-size: 137%;
+}
+
+#myBlock {
+	text-align: center;
+	width: 577px;
+	height: 377px;
+	margin-top: 97px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 57px;
+	border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow:  50px 50px 100px #bebebe,
+             -50px -50px 100px #ffffff;
+}
+
+#myBlock h1 {
+	margin-bottom: 37px;
+}
+#img {
+	width: 217px;
+	height: 217px;
+	margin-top: 37px;
+	margin-right: auto;
+	margin-left: auto;
+	background: url('burger.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
