@@ -31,7 +31,7 @@ defaultForm.addEventListener("submit", (event) => {
   }
 
   if (checkName.includes(newName.value.toUpperCase())) {
-    errorBіanner.style.display = "flex";
+    errorBanner.style.display = "flex";
   } else {
     fetch("https://63693f7228cd16bba71904e4.mockapi.io/heroes", {
       method: "POST",
@@ -50,7 +50,6 @@ let removeHero = (el) => {
 };
 
 let deleteHero = (id) => {
-  console.log("OK");
   fetch("https://63693f7228cd16bba71904e4.mockapi.io/heroes/" + id, {
     method: "DELETE",
   })
