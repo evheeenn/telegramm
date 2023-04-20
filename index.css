@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  height: 77px;
+}
+
+#logo {
+  width: 117px;
+  height: 37px;
+  background: url("tesla-logo.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+@-webkit-keyframes textAnim {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(360deg);
+  }
+}
+
+.headline-tesla {
+  font-size: 23px;
+  font-weight: 300;
+  line-height: 1;
+  font-family: "Montserrat", sans-serif;
+}
+
+.main-headline {
+  font-family: "Montserrat", sans-serif;
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.headline-color {
+  font-size: 23px;
+  font-weight: 300;
+  line-height: 1;
+  font-family: "Montserrat", sans-serif;
+  background-image: -webkit-linear-gradient(74deg, #ff0000, #af233e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: textAnim 1s infinite linear;
+}
+
+.auto-block {
+  margin-top: 57px;
+  height: 337px;
+}
+
+.colors {
+  height: 97px;
+}
+
+.text {
+  font-size: 17px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(167, 167, 167);
+}
+
+.color {
+  width: 25px;
+  height: 35px;
+  border-radius: 3px;
+  transition: box-shadow 0.6s ease;
+  cursor: pointer;
+}
+
+.color:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1px;
+}
+
+.color:active {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1px;
+}
