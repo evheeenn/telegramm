@@ -1,0 +1,23 @@
+* {
+    font-family: 'Wix Madefor Display', sans-serif;
+}
+
+h1 {
+    padding-bottom: 27px;
+    font-weight: 500;
+}
+
+.App {
+    margin: 73px 0 0 73px;
+}
+
+.filter-wrapper {
+    display: flex;
+    width: 400px;
+    margin-top: 27px;
+    margin-left: 57%;
+}
+
+.filter-wrapper button {
+    margin-left: 17px;
+}
