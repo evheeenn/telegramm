@@ -1,0 +1,35 @@
+ul {
+    margin-top: 27px;
+}
+
+.todo {
+    display: flex;
+    width: 1350px;
+}
+
+.todo div {
+    display: flex;
+    border: 1px solid #E6E8EB;
+    padding: 15px 10px 15px 10px;
+    font-weight: 800;
+}
+
+.div1 {
+    width: 3%;
+}
+
+.div2 {
+    width: 30%;
+}
+
+.div3 {
+    width: 37%;
+}
+
+.div4 {
+    width: 10%;
+}
+
+.div5 {
+    width: 20%;
+}

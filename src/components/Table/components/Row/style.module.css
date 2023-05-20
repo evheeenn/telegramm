@@ -1,0 +1,46 @@
+.todo {
+    display: flex;
+    width: 1350px;
+}
+
+.todo div {
+    display: flex;
+    align-items: center;
+    border: 1px solid #E6E8EB;
+    padding: 8px 5px 8px 5px;
+}
+
+ul {
+    margin-top: 27px;
+}
+
+.div1 {
+    width: 3%;
+    justify-content: center;
+}
+
+.div2 {
+    width: 30%;
+}
+
+.div3 {
+    width: 37%;
+}
+
+.div4 {
+    width: 10%;
+    justify-content: center;
+}
+
+.div5 {
+    width: 20%;
+    padding-left: 17px;
+}
+
+.div5 button {
+    margin-left: 7px;
+}
+
+.button {
+    font-size: 15px;
+}
