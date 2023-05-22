@@ -1,0 +1,27 @@
+.formsWrapper {
+  margin-top: 57px;
+  height: 57.5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.login {
+  width: 50%;
+  height: 100%;
+  padding-left: 37px;
+  border-right: 3px solid #bbbbbb;
+}
+
+.forms-wrapper .login h1 {
+  font-weight: 500;
+}
+.forms-wrapper .login h4 {
+  font-weight: 500;
+}
+
+.registration {
+  width: 50%;
+  height: 100%;
+  padding-left: 37px;
+}
